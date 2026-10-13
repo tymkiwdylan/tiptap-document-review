@@ -1,0 +1,14 @@
+import { build } from 'esbuild';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
+const root = fileURLToPath(new URL('..', import.meta.url));
+const output = resolve(root, 'demo-dist');
+await mkdir(output, { recursive: true });
+await build({ entryPoints: [resolve(root, 'demo/main.ts')], bundle: true, format: 'iife', platform: 'browser', target: 'es2022', minify: true, legalComments: 'inline', outfile: resolve(output, 'demo.js') });
+const template = await readFile(resolve(root, 'demo/index.html'), 'utf8');
+const css = await readFile(resolve(output, 'demo.css'), 'utf8');
+const js = await readFile(resolve(output, 'demo.js'), 'utf8');
+const html = template.replace('</head>', () => `<style>${css}</style>\n</head>`).replace('<script type="module" src="./main.ts"></script>', () => `<script>${js.replace(/<\/script/gi, '<\\/script')}</script>`);
+await writeFile(resolve(output, 'index.html'), html);
+console.log(`Built self-contained browser demo (${Math.round(Buffer.byteLength(html) / 1024)} KiB): ${resolve(output, 'index.html')}`);

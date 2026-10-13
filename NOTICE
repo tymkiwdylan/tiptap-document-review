@@ -1,0 +1,10 @@
+Tiptap Document Review
+
+Developed by Dylan Tymkiw.
+
+The initial document review engine and editor schema were extracted from
+Norte Development / iAlex. The original Apache-2.0 license is preserved.
+See PROVENANCE.json for the source snapshot and extraction changes.
+
+Tiptap, ProseMirror, and other dependencies retain their respective licenses.
+This project is independent of the Tiptap company and its commercial products.

@@ -1,0 +1,63 @@
+{
+  "source_repository": "Norte-Development/ialex-convex",
+  "source_commit": "6a18c247d73c088d253f7faaa785243377472e47",
+  "source_paths": [
+    "packages/shared/src/diff",
+    "packages/shared/src/tiptap"
+  ],
+  "publication_status": "Extracted public project. The original product repository remains private.",
+  "license_source": "Apache-2.0 license preserved from the original repository.",
+  "scope": "Reusable document diff/review engine, required editor schema/extensions, tests, and a demo using synthetic documents.",
+  "files": [
+    {
+      "path": "packages/shared/src/tiptap/schema.ts",
+      "blob_sha": "b6cbeab85aca576ab9087faf7068ee2858f1fb65"
+    },
+    {
+      "path": "packages/shared/src/tiptap/changeOperations.ts",
+      "blob_sha": "5a2abee35941ad9c5bb141c81d94a9de622bae69"
+    },
+    {
+      "path": "packages/shared/src/tiptap/changeNodes.ts",
+      "blob_sha": "519bc85663db192527a1e77ad943e7e8fe21dfb8"
+    },
+    {
+      "path": "packages/shared/src/tiptap/storedImage.ts",
+      "blob_sha": "cb74c8976648c66ae8f1c68878a81d57d47ecb36"
+    },
+    {
+      "path": "packages/shared/src/tiptap/paragraphIndent.ts",
+      "blob_sha": "804d5cce327dc50f4c56d8249fbf9e8437a0c5c0"
+    },
+    {
+      "path": "packages/shared/src/diff/trackedDocument.ts",
+      "blob_sha": "731ec1cb863e33ec81b32029d4f3badf20c7cb92"
+    },
+    {
+      "path": "packages/shared/src/diff/index.test.ts",
+      "blob_sha": "78a6f3e8d295b5886456107270ad5c8284b948c3"
+    },
+    {
+      "path": "packages/shared/src/diff/jsonDiff.ts",
+      "blob_sha": "e819d69f5b3cefe7090aa9d6659064799aae5e78"
+    },
+    {
+      "path": "packages/shared/src/diff/jsonDiff.contract.test.ts",
+      "blob_sha": "8fcf41754a2df0b894c5e1a81651cdabae568546"
+    },
+    {
+      "path": "packages/shared/src/diff/constants.ts",
+      "blob_sha": "e3893257a56a7038016dd177495189982d916198"
+    },
+    {
+      "path": "packages/shared/src/diff/index.ts",
+      "blob_sha": "dea42cf77cb986d0daea39b8964a3cb565e08b03"
+    }
+  ],
+  "local_modifications": [
+    "Exposed createReviewExtensions so the browser editors and engine share the same schema.",
+    "Removed redundant http/https protocol registration; default link handling is retained.",
+    "Added browser-only review node views and a demo session model; source decision operations are reused unchanged.",
+    "Excluded unreferenced retired portal helpers and normalized the constants file ending."
+  ]
+}
